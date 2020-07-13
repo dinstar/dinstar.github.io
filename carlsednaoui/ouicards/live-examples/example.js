@@ -1,9 +1,7 @@
 var start; // used to initialize the app
 
 function initializeOuicardsApp() {
-  // Load default questions if no flashcards are found in localStorage
-  if (!localStorage.flashcards || localStorage.flashcards === '[]')
-    ouicards.loadFromArray(myFlashcards);
+  ouicards.loadFromArray(myFlashcards);
   initializeHandlers();
 }
 

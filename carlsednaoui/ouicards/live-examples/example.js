@@ -1,11 +1,11 @@
 var start; // used to initialize the app
 
-$(document).ready(function() {
+function initializeOuicardsApp() {
   // Load default questions if no flashcards are found in localStorage
   if (!localStorage.flashcards || localStorage.flashcards === '[]')
     ouicards.loadFromArray(myFlashcards);
   initializeHandlers();
-});
+}
 
 function initializeHandlers() {
   // Unbind all events, in case the user loads new flashcard questions
@@ -40,7 +40,7 @@ function initializeHandlers() {
   // Correct and wrong answer functionality
   $('.correct').on('click', function() {
     if (!start) {
-      console.log(start);
+      console.log('start == ' + start);
       start = true;
       changeQuestion();
       return;
